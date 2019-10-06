@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Yamba</string>
+    <string name="write_tweet">Write Tweet</string>
+    <string name="send">Send</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
