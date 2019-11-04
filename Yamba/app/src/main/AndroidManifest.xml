@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".RefreshService"
+            android:exported="false"></service>
+        <provider
+            android:name="com.example.yamba.StatusProvider"
+            android:authorities="com.example.yamba.StatusProvider"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main">

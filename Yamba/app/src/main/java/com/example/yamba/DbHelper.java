@@ -1,4 +1,4 @@
-package com.marakana.android.yamba;
+package com.example.yamba;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
