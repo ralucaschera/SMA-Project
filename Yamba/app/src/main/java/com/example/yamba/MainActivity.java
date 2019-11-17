@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
     }
     // Called to lazily initialize the action bar
     @Override
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_refresh:
                 startService(new Intent(this, RefreshService.class));
+                return true;
+            case R.id.action_purge:
+                int rows = getContentResolver().delete(
+                        StatusContract.CONTENT_URI, null, null);
+                Toast.makeText(this, "Deleted " + rows + " rows",
+                        Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return false;

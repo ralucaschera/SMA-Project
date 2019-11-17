@@ -72,6 +72,12 @@ public class RefreshService extends IntentService {
 
                 }
             }
+            if (count > 0) {
+                Log.d(TAG, "SENDING BROADCAST");
+                sendBroadcast(new Intent(
+                        "com.example.yamba.action.NEW_STATUSES")
+                        .putExtra("count", count));
+            }
         } catch (YambaClientException e) {
             Log.e(TAG, "Failed to fetch the timeline", e);
             e.printStackTrace();
